@@ -148,6 +148,10 @@ async function insertionsort()
     });
     while(j>=0 && parseInt(bars[j].childNodes[0].innerHTML) >key)
     {
+      sw++;
+      document.getElementById("swap").innerHTML = sw;
+      comp++;
+      document.getElementById("comp").innerHTML = comp;
       bars[j].style.backgroundColor = "red";
       bars[j+1].style.height =  bars[j].style.height;
       bars[j+1].childNodes[0].innerHTML =  bars[j].childNodes[0].innerHTML ;
@@ -159,7 +163,8 @@ async function insertionsort()
         bars[k].style.backgroundColor = " rgb(49, 226, 13)";
       }
     }
-
+    comp++;
+    document.getElementById("comp").innerHTML = comp;
     bars[j + 1].style.height = barheight;
     bars[j + 1].childNodes[0].innerHTML = key;
 
